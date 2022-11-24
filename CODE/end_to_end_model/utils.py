@@ -5,7 +5,6 @@ import tqdm
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Softmax, MaxPooling1D, Conv1D, Flatten, BatchNormalization, Activation
 from sklearn.model_selection import train_test_split
-import keras
 
 
 label2int = {

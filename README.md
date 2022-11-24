@@ -1,5 +1,8 @@
-# Gender Recognition using Voice
-This repository is about building a deep learning model using TensorFlow 2 to recognize gender of a given speaker's audio.
+# Gender Recognition By Voice
+
+### End-to-End Model is present in `./end_to_end_model` folder
+
+Building a end-to-end deep learning model using TensorFlow 2 to recognize gender of a given speaker's audio.
 
 ## Requirements
 - TensorFlow 2.x.x
@@ -41,4 +44,35 @@ Installing the required libraries:
 
     Wait until you see `"Please speak"` prompt and start talking, it will stop recording as long as you stop talking.
 
-    
+
+### featureModel is present in `./featureModel` folder
+
+## Feature Model: 
+
+### There is feature_colab.ipyb for viewing all the results
+
+## USAGE:
+Run `python compare_models.py` to compare different classifiers for the problem.
+
+Running `python demo.py` shows a menu in which you can choose to predict gender from extracted features, create recording, train model, extract features
+
+## NOTE:
+### Feature extraction of dataset is done using R as there are no supporting module in python.
+### **You need R for feature Extraction - option 1**
+### There are sample features for test files you can directly test them using features.csv - option 2
+### You can train different models by changing in simple_model.py - option 3
+
+
+
+## Requirements
+### Python
+1. sklearn
+2. matplotlib
+3. pandas
+4. pyaudio
+5. numpy
+
+### R
+1. tuneR
+2. seewave
+3. warbleR

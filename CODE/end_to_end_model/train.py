@@ -1,6 +1,8 @@
 import os
 from tensorflow.keras.callbacks import ModelCheckpoint, TensorBoard, EarlyStopping
 import tensorflow as tf
+from sklearn import metrics
+# import ConfusionMatrixDisplay
 
 from utils import load_data, split_data, create_model
 import pickle as pkl
@@ -26,6 +28,7 @@ epochs = 100
 model.fit(data["X_train"], data["y_train"], epochs=epochs, batch_size=batch_size, validation_data=(data["X_valid"], data["y_valid"]),
           callbacks=[tensorboard, early_stopping])
 
+
 # save the model to a file
 # model.save("results/model.h5")
 # save the diagram of the model to a file
@@ -34,7 +37,15 @@ with open("results/model.pkl", "wb") as f:
 
 # evaluating the model using the testing set
 print(f"Evaluating the model using {len(data['X_test'])} samples...")
-loss, accuracy = model.evaluate(data["X_test"], data["y_test"], verbose=0)
+# loss, accuracy = model.evaluate(data["X_test"], data["y_test"], verbose=0)
+# instead of just loss and accuracy we can get precision, recall, f1-score and support
+# for each class
+loss, accuracy= model.evaluate(data["X_test"], data["y_test"], verbose=0)
 print(f"Loss: {loss:.4f}")
 print(f"Accuracy: {accuracy*100:.2f}%")
+y_pred = model.predict(data["X_test"])
+y_pred = tf.argmax(y_pred, axis=1)
+
+# print the classification report
+print(metrics.classification_report(data["y_test"], y_pred))
 

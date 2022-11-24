@@ -1,6 +1,6 @@
 # Gender Recognition By Voice
 
-### End-to-End Model is present in `./end_to_end_model` folder
+### End-to-End Model is present in `.CODE/end_to_end_model` folder
 
 Building a end-to-end deep learning model using TensorFlow 2 to recognize gender of a given speaker's audio.
 
@@ -45,7 +45,7 @@ Installing the required libraries:
     Wait until you see `"Please speak"` prompt and start talking, it will stop recording as long as you stop talking.
 
 
-### featureModel is present in `./featureModel` folder
+### featureModel is present in `.CODE/featureModel` folder
 
 ## Feature Model: 
 
